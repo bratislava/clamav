@@ -2,10 +2,8 @@
 FROM alpine:3.8 AS prod
 
 ENV CLAM_VERSION=0.103.7-r0
-RUN apk update && apk add \
-      g++ gcc gdb make cmake py3-pytest python3 valgrind \
-      bzip2-dev check-dev curl-dev json-c-dev libmilter-dev libxml2-dev \
-      linux-headers ncurses-dev wget openssl-dev pcre2-dev zlib-dev \
+RUN apk update \
+RUN apk add g++ gcc gdb make cmake py3-pytest python3 valgrind bzip2-dev check-dev curl-dev json-c-dev libmilter-dev libxml2-dev linux-headers ncurses-dev wget openssl-dev pcre2-dev zlib-dev \
 RUN apk add cargo rust
 
 # Image specific layers under this line
