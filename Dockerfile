@@ -7,7 +7,7 @@ RUN apk add g++ gcc gdb make cmake py3-pytest python3 valgrind bzip2-dev check-d
 RUN apk add cargo rust
 
 # Image specific layers under this line
-RUN apk add --no-cache clamav=$CLAM_VERSION clamav-libunrar=$CLAM_VERSION
+RUN apk add --no-cache clamav clamav-libunrar
 
 RUN mkdir -p /logs /data
 RUN echo `date`: File created >> /logs/clamscan.log
