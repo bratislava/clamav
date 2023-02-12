@@ -12,7 +12,6 @@ RUN echo `date`: File created >> /logs/clamscan.log
 COPY conf /etc/clamav-custom
 COPY start.py /start.py
 COPY health.sh /health.sh
-COPY scan.sh /scan.sh
-RUN chmod +x /health.sh /scan.sh
+RUN chmod +x /health.sh
 
 CMD /start.py
