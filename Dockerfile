@@ -2,13 +2,15 @@
 FROM alpine:3.8 AS prod
 
 ENV CLAM_VERSION=0.103.7-r0
-# python3 shared with most images
-RUN apk add --no-cache \
-    python3 py3-pip \
-  && pip3 install --upgrade pip
+RUN apk update && apk add \
+      g++ gcc gdb make cmake py3-pytest python3 valgrind \
+      bzip2-dev check-dev curl-dev json-c-dev libmilter-dev libxml2-dev \
+      linux-headers ncurses-dev wget openssl-dev pcre2-dev zlib-dev \
+RUN apk add cargo rust
+
 # Image specific layers under this line
 RUN apk add --no-cache clamav=$CLAM_VERSION clamav-libunrar=$CLAM_VERSION
-RUN apk add --no-cache rsyslog wget curl
+
 RUN mkdir -p /logs /data
 RUN echo `date`: File created >> /logs/clamscan.log
 
