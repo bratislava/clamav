@@ -50,7 +50,7 @@ spec:
             exec:
               command:
                 - /readiness.sh
-            initialDelaySeconds: 120
+            initialDelaySeconds: 60
       terminationGracePeriodSeconds: 30
       volumes:
         - name: data-vol
