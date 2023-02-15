@@ -41,6 +41,8 @@ spec:
             - configMapRef:
                 name: env
           livenessProbe:
+            initialDelaySeconds: 60
+            periodSeconds: 30
             exec:
               command:
                 - /health.sh
@@ -48,8 +50,7 @@ spec:
             exec:
               command:
                 - /readiness.sh
-            initialDelaySeconds: 60
-            periodSeconds: 30
+            initialDelaySeconds: 120
       terminationGracePeriodSeconds: 30
       volumes:
         - name: data-vol

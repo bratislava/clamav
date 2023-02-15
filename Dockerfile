@@ -9,9 +9,13 @@ COPY start.py /start.py
 COPY setupconfig.py /setupconfig.py
 COPY health.sh /health.sh
 COPY readiness.sh /readiness.sh
-RUN chmod +x /readiness.py
-RUN chmod +x /health.py
+RUN chmod +x /readiness.sh
+RUN chmod +x /health.sh
+RUN chmod +x /setupconfig.py
 RUN chmod +x /start.py
 RUN chmod +x /init
 
-CMD ["/init"]
+# run setupconfig.py to setup clamav config
+RUN /setupconfig.py
+
+ENTRYPOINT ["/init"]
