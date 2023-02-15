@@ -1,8 +1,8 @@
 # Dockerfile for clamav service
 FROM clamav/clamav:0.104.2 AS prod
 
-# install python3
-RUN apt-get update && apt-get install -y python3 python3-pip
+# install python3 and pip apk
+RUN apk add --no-cache python3
 
 COPY conf /etc/clamav-custom
 COPY start.py /start.py
