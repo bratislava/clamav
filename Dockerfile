@@ -7,7 +7,7 @@ RUN apk add --no-cache python3
 COPY conf /etc/clamav-custom
 COPY start.py /start.py
 COPY health.sh /health.sh
-RUN chmod +x /health.sh
+COPY readiness.sh /readiness.sh
 RUN chmod +x /start.py
 
 CMD ["/start.py"]
