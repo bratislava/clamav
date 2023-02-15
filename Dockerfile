@@ -9,6 +9,8 @@ COPY start.py /start.py
 COPY setupconfig.py /setupconfig.py
 COPY health.sh /health.sh
 COPY readiness.sh /readiness.sh
+RUN chmod +x /readiness.py
+RUN chmod +x /health.py
 RUN chmod +x /start.py
 RUN chmod +x /init
 
