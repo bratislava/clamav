@@ -1,5 +1,5 @@
 # Dockerfile for clamav service
-FROM clamav/clamav:0.104_base AS prod
+FROM clamav/clamav:0.104 AS prod
 
 RUN mkdir -p /logs /data
 RUN echo `date`: File created >> /logs/clamscan.log
