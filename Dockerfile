@@ -1,12 +1,5 @@
 # Dockerfile for clamav service
-FROM alpine:3.8 AS prod
-
-ENV CLAM_VERSION=0.103.7
-RUN apk add --no-cache g++ gcc gdb make cmake py3-pytest python3 valgrind bzip2-dev check-dev curl json-c-dev libmilter-dev libxml2-dev linux-headers ncurses-dev wget openssl-dev pcre2-dev zlib-dev
-RUN apk add --no-cache cargo rust
-
-# Image specific layers under this line
-RUN apk add --no-cache clamav clamav-libunrar
+FROM clamav/clamav:0.104_base AS prod
 
 RUN mkdir -p /logs /data
 RUN echo `date`: File created >> /logs/clamscan.log
