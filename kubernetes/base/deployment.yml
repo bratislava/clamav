@@ -42,7 +42,7 @@ spec:
                 name: env
           livenessProbe:
             initialDelaySeconds: 60
-            periodSeconds: 30
+            periodSeconds: 60
             exec:
               command:
                 - /health.sh
