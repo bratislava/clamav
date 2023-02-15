@@ -1,6 +1,6 @@
 #!/usr/bin/env /bin/sh
 
-if [ "$(echo PING | nc localhost 3310)" = "PONG" ]; then
+if [ "$(echo PING | nc 127.0.0.1 3310)" = "PONG" ]; then
 	echo "ping successful"
 else
 	echo "ping failed"
