@@ -1,7 +1,6 @@
 resources:
   - deployment.yml
   - service-clamav.yml
-  - ingress.yml
 configurations:
   - configuration.yml
 
