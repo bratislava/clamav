@@ -11,6 +11,7 @@ metadata:
     tag: ${TAG}
     image: ${IMAGE}
 spec:
+  replicas: 2
   selector:
     matchLabels:
       service: app
@@ -26,6 +27,7 @@ spec:
           resources:
             limits:
               memory: 8Gi
+              cpu: 900m
             requests:
               cpu: 500m
               memory: 2Gi
